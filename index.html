@@ -18,7 +18,7 @@
         <div id="Grid"></div>        
 
 <script >
-    ej.grids.Grid.Inject(ej.grids.Filter, ej.grids.Edit, ej.grids.Toolbar);
+    ej.grids.Grid.Inject(ej.grids.Filter, ej.grids.Edit, ej.grids.Toolbar, ej.grids.Sort, ej.grids.Page, ej.grids.Group);
     
     var grid = new ej.grids.Grid({
         dataSource: filterData,
@@ -27,6 +27,11 @@
         filterSettings: { type:'Excel' },
         editSettings: { allowEditing: true, allowAdding: true, allowDeleting: true },
         toolbar: ['Add', 'Edit', 'Delete', 'Update', 'Cancel', 'Search'],
+        allowSorting: true,
+        allowMultiSorting: true,
+        allowPaging: true,
+        pageSettings: { pageSize: 10 },
+        allowGrouping: true,
         columns: [
                 { field: 'OrderID', headerText: 'Order ID', width: 120, textAlign: 'Right' },
                 { field: 'CustomerID', headerText: 'Customer Name', width: 150, },
