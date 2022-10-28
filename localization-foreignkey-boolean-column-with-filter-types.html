@@ -39,7 +39,7 @@
     }
 });
   
-    ej.grids.Grid.Inject(ej.grids.Filter, ej.grids.Edit, ej.grids.Toolbar, ej.grids.Sort, ej.grids.Page, ej.grids.Group);
+    ej.grids.Grid.Inject(ej.grids.Filter, ej.grids.Edit, ej.grids.Toolbar, ej.grids.Sort, ej.grids.Page, ej.grids.Group, ej.grids.ForeignKey));
     
     var grid = new ej.grids.Grid({
         dataSource: filterData,
@@ -57,6 +57,9 @@
         columns: [
                 { field: 'OrderID', headerText: 'Order ID', width: 120, textAlign: 'Right' },
                 { field: 'CustomerID', headerText: 'Customer Name', width: 150, },
+                {
+                    field: 'EmployeeID', headerText: 'Employee Name', width: 150, foreignKeyValue: 'FirstName', dataSource: employeeData
+                }
                 { field: 'ShipCountry', headerText: 'Ship Country', width: 150 },
                 { field: 'OrderDate', headerText: 'Order Date', width: 130, format: 'yMd', textAlign: 'Right' },
                 { field: 'Freight', width: 120, format: 'C2', textAlign: 'Right' },
