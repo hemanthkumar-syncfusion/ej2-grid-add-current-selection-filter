@@ -27,6 +27,14 @@
   
 </head>
 <body>
+    <label for="filterTypes">Choose a Filter Types:</label>
+
+        <select name="filterTypes" id="filterTypes" onchange="filterTypesChange()">
+          <option value="excel">Excel</option>
+          <option value="checkbox">Check Box</option>
+          <option value="menu">Menu</option>
+        </select>
+    
         <div id="Grid"></div>        
 
 <script >
@@ -67,5 +75,16 @@
         ]
 });
 grid.appendTo('#Grid');
+    
+    function filterTypesChange() {
+    var grid = document.getElementsByClassName('e-grid')[0].ej2_instances[0];
+    if (document.getElementById("filterTypes").value === 'excel') {
+       grid.filterSettings.type = 'Excel';
+    } else if (document.getElementById("filterTypes").value === 'checkbox') {
+        grid.filterSettings.type = 'CheckBox';
+    } else if (document.getElementById("filterTypes").value === 'menu') {
+        grid.filterSettings.type = 'Menu';
+    }
+}
 </script>
 </body></html>
