@@ -85,7 +85,7 @@
         pageSettings: { pageSize: 10 },
         allowGrouping: true,
         columns: [
-                { field: 'OrderID', headerText: 'Order ID', width: 120, textAlign: 'Right' },
+                { field: 'OrderID', headerText: 'Order ID', width: 120, textAlign: 'Right', isPrimaryKey: true },
                 { field: 'CustomerID', headerText: 'Customer Name', width: 150, },
                 {
                     field: 'EmployeeID', headerText: 'Employee Name(fk)', width: 150, foreignKeyValue: 'FirstName', dataSource: employeeData
